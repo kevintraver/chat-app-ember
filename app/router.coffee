@@ -5,6 +5,9 @@ Router = EmberRouter.extend
   location: config.locationType
   rootURL: config.rootURL
 
-Router.map
+Router.map ->
+  @route 'chatrooms'
+  @route 'chatroom', { path: '/chatroom/:chatroom_id' }
+  @route 'login'
 
 `export default Router;`

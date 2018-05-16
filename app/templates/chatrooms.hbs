@@ -1,0 +1,7 @@
+<ul>
+  {{#each model as |chatroom|}}
+    <li>
+      {{#link-to 'chatroom' chatroom.id}} {{chatroom.topic}} {{/link-to}}
+    </li>
+  {{/each}}
+</ul>
