@@ -1,0 +1,31 @@
+<div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
+
+  <div>
+    <div class="uk-card uk-flex-middle uk-card-body">
+      <h3 class="uk-card-title">Online Users</h3>
+      {{#each users as |user|}}
+      <p>{{user.username}}</p>
+      {{/each}}
+    </div>
+  </div>
+
+  <div>
+    <div class="uk-card uk-card-default uk-flex-middle uk-card-body">
+      <h3 class="uk-card-title">Chatroom: {{topic}}</h3>
+
+      {{#each messages as |message|}}
+        {{message-component user=user message=message}}
+      {{/each}}
+
+      <br> {{input value=content }}
+
+      <button {{action "sendMessage"}}>
+        Send
+      </button>
+
+
+    </div>
+  </div>
+
+</div>
+

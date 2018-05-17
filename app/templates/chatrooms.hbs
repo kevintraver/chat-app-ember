@@ -1,7 +1,24 @@
-<ul>
-  {{#each model as |chatroom|}}
-    <li>
-      {{#link-to 'chatroom' chatroom.id}} {{chatroom.topic}} {{/link-to}}
-    </li>
-  {{/each}}
-</ul>
+  <div class="uk-container">
+
+    <h2>Chatrooms</h2>
+    <div class="uk-card uk-card-default uk-border-rounded">
+
+      <div class="uk-card-body uk-padding-small">
+
+        <div>
+          <ul class="uk-list uk-list-large uk-list-divider">
+            {{#each model as |chatroom|}}
+            <li>
+              {{#link-to 'chatroom' chatroom.id}} {{chatroom.topic}} {{/link-to}}
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </div>
