@@ -1,4 +1,5 @@
 import Component from '@ember/component';
+import ENV from '../config/environment';
 
 
 export default Ember.Component.extend({
@@ -16,8 +17,8 @@ export default Ember.Component.extend({
     content: 'message',
   
     setupSubscription: Ember.on('init', function() {
-      var consumer = this.get('cableService').createConsumer('ws://localhost:3000/websockets');
-  
+      var consumer = this.get('cableService').createConsumer(`ws:/${ENV.APP.websocketsHost}:${ENV.APP.websocketsPort}//websockets`);
+
       var messagesSubscription = consumer.subscriptions.create("MessagesChannel", {
         received: (data) => {
           if (data.chatroom_id == this.get('chatroomId')) {

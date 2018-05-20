@@ -47,5 +47,8 @@ module.exports = function(environment) {
     // here you can enable a production-specific feature
   }
 
+  ENV.APP.websocketsHost = 'localhost';
+  ENV.APP.websocketsPort = '3000';
+
   return ENV;
 };
